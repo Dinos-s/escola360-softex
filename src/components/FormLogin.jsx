@@ -31,6 +31,7 @@ function FormLogin() {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
+          
           <div className='input-group'>
             <label htmlFor="password">Senha:</label>
             <input
@@ -42,7 +43,7 @@ function FormLogin() {
           </div>
 
           <div className="forgot-password">
-            <a href="#">Esqueceu sua senha?</a>
+            <Link to="/recSenha">Esqueceu sua senha?</Link>
           </div>
 
           <button className='btn-login' type="submit">Entrar</button>
