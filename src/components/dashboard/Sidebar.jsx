@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import logoTipo from '../../assets/LOGOTIPO.png';
+import './Sidebar.css';
 
 function Sidebar() {
     return (
@@ -11,11 +12,15 @@ function Sidebar() {
             <p className="user-greeting">Olá, Maria</p>
 
             <nav className="sidebar-nav">
-                <NavLink to="/mural"> Mural </NavLink>
-                <NavLink to="/perfil"> Mural </NavLink>
-                <NavLink to="/boletim"> Mural </NavLink>
-                <NavLink to="/recSenha"> Mural </NavLink>
+                <NavLink to="/dashboard" end> Mural </NavLink>
+                <NavLink to="/dashboard/perfil"> Perfil </NavLink>
+                <NavLink to="/dashboard/boletim"> Boletim </NavLink>
+                <NavLink to="/dashboard/trocaSenha"> Trocar Senha </NavLink>
             </nav>
+
+            <div className="sidebar-footer">
+                <a href="/">Sair</a>
+            </div>
         </aside>
     )
 }
