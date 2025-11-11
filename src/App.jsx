@@ -7,7 +7,6 @@ import Dashboard from './components/dashboard/Dashboard'
 import Mural from './components/dashboard/Mural'
 
 function App() {
-
   return (
     <Routes>
       <Route path="/" element={<FormLogin />} />
@@ -19,7 +18,7 @@ function App() {
         <Route index element={<Mural />}/>
       </Route>
     </Routes>
-  )
+  );
 }
 
-export default App
+export default App;
