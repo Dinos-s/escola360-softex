@@ -5,12 +5,20 @@ import "../components/Form.css";
 // import '../App.css';
 
 function FormCadastro() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    dataNascimento: "",
-    cpf: "",
-  });
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        dataNascimento: '',
+        cpf: '',
+        password: '',
+        cep: '',
+        logradouro: '',
+        numero: '',
+        complemento: '',
+        bairro: '',
+        cidade: '',
+        estado: '',
+    })
 
   // Função genérica para atualizar o estado quando qualquer campo do formulário mudar.
   const handleChange = (e) => {
@@ -18,11 +26,45 @@ function FormCadastro() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Aqui você pode fazer o que quiser com os dados do formulário
-    console.log(formData);
-  };
+    const buscarCep = async (cep) => {
+        const cepLimpo = cep.replace(/\D/g, '');
+        if (cepLimpo.length === 8) {
+            try {
+                const response = await fetch(`https://viacep.com.br/ws/${cepLimpo}/json/`);
+                const data = await response.json();
+                if (!data.erro) {
+                    setFormData(prevData => ({
+                        ...prevData,
+                        logradouro: data.logradouro || '',
+                        bairro: data.bairro || '',
+                        cidade: data.localidade || '',
+                        estado: data.uf || '',
+                        complemento: data.complemento || '',
+                    }));
+                } else {
+                    alert('CEP inválido ou não encontrado. Tente novamente.');
+                }
+            } catch (error) {
+                console.error('Erro ao buscar CEP:', error);
+                alert('CEP inválido ou não encontrado. Tente novamente.');
+            }
+        }
+    }
+
+    const handleCepChange = (dados) => {
+        const { value } = dados.target;
+        setFormData({ ...formData, cep: value });
+
+        if (value.replace(/\D/g, '').length === 8) {
+            buscarCep(value);
+        }
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        // Aqui você pode fazer o que quiser com os dados do formulário
+        console.log(formData)
+    }
 
   return (
     <div className="form-container">
@@ -93,10 +135,44 @@ function FormCadastro() {
             />
           </div>
 
-          <button className="btn-login" type="submit">
-            Cadastrar
-          </button>
-        </form>
+                    {/* Seção para Endereço */}
+                    <div className="input-group">
+                        <label htmlFor="cep">CEP:</label>
+                        <input type="text" id="cep" name='cep' value={formData.cep} onChange={handleCepChange} placeholder='Digite o CEP' required />
+                    </div>
+
+                    <div className="input-group">
+                        <label htmlFor="logradouro">Logradouro:</label>
+                        <input type="text" id="logradouro" name='logradouro' value={formData.logradouro} placeholder='Rua, Avenida, etc.' onChange={handleChange} required />
+                    </div>
+
+                    <div className="input-group">
+                        <label htmlFor="numero">Número:</label>
+                        <input type="text" id="numero" name='numero' value={formData.numero} onChange={handleChange} placeholder='Número' required />
+                    </div>
+
+                    <div className="input-group">
+                        <label htmlFor="complemento">Complemento:</label>
+                        <input type="text" id="complemento" name='complemento' value={formData.complemento} onChange={handleChange} placeholder='Apto, Bloco, etc.' />
+                    </div>
+
+                    <div className="input-group">
+                        <label htmlFor="bairro">Bairro:</label>
+                        <input type="text" id="bairro" name='bairro' value={formData.bairro} onChange={handleChange} placeholder='Bairro' required />
+                    </div>
+
+                    <div className="input-group">
+                        <label htmlFor="cidade">Cidade:</label>
+                        <input type="text" id="cidade" name='cidade' value={formData.cidade} onChange={handleChange} placeholder='Cidade' required />
+                    </div>
+
+                    <div className="input-group">
+                        <label htmlFor="estado">Estado:</label>
+                        <input type="text" id="estado" name='estado' value={formData.estado} onChange={handleChange} placeholder='Estado UF' required />
+                    </div>
+
+                    <button className='btn-login' type="submit">Cadastrar</button>
+                </form>
 
         <div className="signup-link">
           <p>
