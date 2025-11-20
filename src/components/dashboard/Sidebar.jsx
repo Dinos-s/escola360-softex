@@ -13,6 +13,7 @@ function Sidebar() {
 
             <nav className="sidebar-nav">
                 <NavLink to="/dashboard" end> Mural </NavLink>
+                <NavLink to="/dashboard/graficos"> Gráficos </NavLink>
                 <NavLink to="/dashboard/perfil"> Perfil </NavLink>
                 <NavLink to="/dashboard/boletim"> Boletim </NavLink>
                 <NavLink to="/dashboard/trocaSenha"> Trocar Senha </NavLink>

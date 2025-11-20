@@ -5,6 +5,7 @@ import './App.css'
 import FormRecSenha from './components/FormRecSenha'
 import Dashboard from './components/dashboard/Dashboard'
 import Mural from './components/dashboard/Mural'
+import Graficos from './components/dashboard/graficos/graficos'
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
       {/* rotas dinamicas, para autenticação */}
       <Route path='/dashboard' element={<Dashboard />}>
         <Route index element={<Mural />}/>
+        <Route path='graficos' element={<Graficos />}/>
       </Route>
     </Routes>
   )
