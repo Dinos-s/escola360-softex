@@ -11,13 +11,13 @@ function FormCadastro() {
         dataNascimento: '',
         cpf: '',
         password: '',
-        cep: '',
-        logradouro: '',
-        numero: '',
-        complemento: '',
-        bairro: '',
-        cidade: '',
-        estado: '',
+        // cep: '',
+        // logradouro: '',
+        // numero: '',
+        // complemento: '',
+        // bairro: '',
+        // cidade: '',
+        // estado: '',
     })
 
   // Função genérica para atualizar o estado quando qualquer campo do formulário mudar.
