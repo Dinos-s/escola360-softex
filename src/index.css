@@ -19,6 +19,7 @@
   --cor-texto-padrao: #212529;
   --cor-sombra: rgba(0, 0, 0, 0.15);
   --transicao-rapida: 0.2s ease-in-out;
+<<<<<<< HEAD
 }
 
 body {
@@ -27,7 +28,11 @@ body {
   place-items: center;
   /* min-width: 320px;
   min-height: 100vh; */
+=======
+>>>>>>> 0923a43e604fa5981233082c5ec37126be2f5c11
 }
+
+
 
 a {
   font-weight: 500;
