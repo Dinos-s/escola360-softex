@@ -11,6 +11,7 @@
 .sidebar-header {
   padding: 0 10px;
   margin-bottom: 20px;
+  align-self: center;
 }
 
 .user-greeting {

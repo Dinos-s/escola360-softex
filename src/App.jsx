@@ -5,7 +5,6 @@ import "./App.css";
 
 // Rotas envolvidas no projeto
 import FormRecSenha from "./components/FormRecSenha";
-import Dashboard from "./components/dashboard/Dashboard";
 import Mural from "./components/dashboard/Mural";
 import Graficos from "./components/dashboard/graficos/graficos";
 import Perfil from "./components/dashboard/perfil/Perfil";
@@ -13,6 +12,7 @@ import Boletim from "./components/dashboard/boletim/boletim";
 import Historico from "./components/dashboard/historico/historico";
 import Calendario from "./components/dashboard/calendario/calendario";
 import TrocaSenha from "./components/dashboard/trocaSenha/trocaSenha";
+import Dasboard from "./components/dashboard/dashboard";
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
       <Route path="/recSenha" element={<FormRecSenha />} />
 
       {/* rotas dinamicas, para autenticação */}
-      <Route path="/dashboard" element={<Dashboard />}>
+      <Route path="/dashboard" element={<Dasboard />}>
         <Route index element={<Mural />} />
         <Route path="graficos" element={<Graficos />} />
         <Route path="perfil" element={<Perfil />} />
