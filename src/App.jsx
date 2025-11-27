@@ -5,10 +5,7 @@ import "./App.css";
 
 // Rotas envolvidas no projeto
 import FormRecSenha from "./components/FormRecSenha";
-<<<<<<< HEAD
 import Dashboard from "./components/dashboard/Dashboard";
-=======
->>>>>>> 0923a43e604fa5981233082c5ec37126be2f5c11
 import Mural from "./components/dashboard/Mural";
 import Graficos from "./components/dashboard/graficos/graficos";
 import Perfil from "./components/dashboard/perfil/Perfil";
@@ -16,10 +13,12 @@ import Boletim from "./components/dashboard/boletim/boletim";
 import Historico from "./components/dashboard/historico/historico";
 import Calendario from "./components/dashboard/calendario/calendario";
 import TrocaSenha from "./components/dashboard/trocaSenha/trocaSenha";
-<<<<<<< HEAD
-=======
-import Dasboard from "./components/dashboard/dashboard";
->>>>>>> 0923a43e604fa5981233082c5ec37126be2f5c11
+import Notas from "./components/dashboard/notas/notas";
+import Presenca from "./components/dashboard/presenca/presenca";
+import Usuarios from "./components/dashboard/usuarios/usuarios";
+import Crimural from "./components/dashboard/crimural/crimural";
+import ConfNotas from "./components/dashboard/confNotas/confNotas";
+import CriCalendario from "./components/dashboard/criCalendario/criCalendario";
 
 function App() {
   return (
@@ -29,11 +28,7 @@ function App() {
       <Route path="/recSenha" element={<FormRecSenha />} />
 
       {/* rotas dinamicas, para autenticação */}
-<<<<<<< HEAD
       <Route path="/dashboard" element={<Dashboard />}>
-=======
-      <Route path="/dashboard" element={<Dasboard />}>
->>>>>>> 0923a43e604fa5981233082c5ec37126be2f5c11
         <Route index element={<Mural />} />
         <Route path="graficos" element={<Graficos />} />
         <Route path="perfil" element={<Perfil />} />
@@ -41,6 +36,12 @@ function App() {
         <Route path="historico" element={<Historico />} />
         <Route path="calendario" element={<Calendario />} />
         <Route path="trocaSenha" element={<TrocaSenha />} />
+        <Route path="notas" element={<Notas />} />
+        <Route path="presenca" element={<Presenca />} />
+        <Route path="usuarios" element={<Usuarios />} />
+        <Route path="crimural" element={<Crimural />} />
+        <Route path="confNotas" element={<ConfNotas />} />
+        <Route path="criCalendario" element={<CriCalendario />} />
       </Route>
     </Routes>
   );
