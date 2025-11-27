@@ -67,6 +67,8 @@ const ROTAS_COORDENADOR = [
   { to: "/dashboard/confNotas", name: " Confirma Notas" },
   { to: "/dashboard/crimural", name: "Criar Mural" },
   { to: "/dashboard/criCalendario", name: "Criar Calendário" },
+  { to: "/dashboard/disciplina", name: "Criar Disciplina" },
+  { to: "/dashboard/turma", name: "Criar Turma" },
   { to: "/dashboard/perfil", name: "Meu Perfil" },
   { to: "/dashboard/trocaSenha", name: "Trocar Senha" },
 ];

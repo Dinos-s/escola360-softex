@@ -1,0 +1,75 @@
+/* Container geral */
+.container {
+  max-width: 450px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 0px 12px rgba(0,0,0,0.1);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Descrição */
+.descricao {
+  text-align: justify;
+  color: #444;
+}
+
+/* Select */
+.titulo-select {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+/* Formulário */
+.form-container {
+  margin-top: 25px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  border-left: 4px solid #007bff;
+}
+
+/* form {
+  display: flex;
+  flex-direction: column;
+} */
+
+form label {
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+form input {
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* Botão */
+button {
+  /* margin-top: 20px; */
+  padding: 15px;
+  background: #007bff;
+  color: white;
+  /* border: none; */
+  border-radius: 12px;
+  cursor: pointer;
+  transition: .2s;
+  font-size: 15px;
+}
+
+button:hover {
+  background: lightskyblue;
+}

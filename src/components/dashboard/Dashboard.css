@@ -1,9 +1,12 @@
 .dashboard-layout {
+  /* background-color: red; */
   display: flex;
-  min-height: 100vh;
+  height: 100%;
 }
 
 .main-content {
+  /* background-color: yellow; */
+  margin-left: 85px;
   flex-grow: 1; /* Faz o conteúdo principal ocupar o espaço restante */
   padding: 40px;
 }

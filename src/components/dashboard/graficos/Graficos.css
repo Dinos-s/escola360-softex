@@ -47,3 +47,9 @@
   top: 0;
   left: 0;
 }
+
+.grafico {
+  align-items: center;
+  background-color: blue;
+  height: 50rem;
+}
